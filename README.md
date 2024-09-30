@@ -1,4 +1,4 @@
-# Solid + Vite
+# Kaleidoscope
 
 [Kaleidoscope](https://brybrant.github.io/kaleidoscope/) is a CSS experiment made with [Solid](https://solidjs.com) and [Vite](https://vitejs.dev) by Matt Bryant.
 
