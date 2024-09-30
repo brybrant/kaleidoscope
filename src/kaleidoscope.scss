@@ -1,0 +1,202 @@
+@use './colors' as *;
+
+$static-border-width: 90px;
+$dynamic-border-width: max(8vw, 8vh);
+
+.a {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  width: 50%;
+  height: 50%;
+  background: $primary-darker;
+}
+
+.b, .wedges, .pills, .squares, .petals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.a, .b {
+  transform-origin: 0 100%;
+}
+
+// mask 1
+/* .a:nth-child(1), */ .a:nth-child(6), /* .a:nth-child(7), */ .a:nth-child(12) {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 4 4'%3E%3Cpath d='M0 0 3.8867 0 0 6.732 0 0z'/%3E%3C/svg%3E") 0 0 / 100% 100%;
+}
+
+// mask 2 (odd)
+.a:nth-child(2), .a:nth-child(8) {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 4 4'%3E%3Cpath d='M6 0 6 6 0.4226 6 3.8867 0 6 0z'/%3E%3C/svg%3E") 0 0 / 100% 100%;
+}
+
+// mask 3
+.a:nth-child(3), /* .a:nth-child(4), */ .a:nth-child(9) /* , .a:nth-child(10) */ {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 4 4'%3E%3Cpath d='M6 6 -0.7321 6 6 2.1132 6 6z'/%3E%3C/svg%3E") 0 0 / 100% 100%
+}
+
+// mask 2 (even)
+.a:nth-child(5), .a:nth-child(11) {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 4 4'%3E%3Cpath d='M0 0 6 0 6 2.1132 0 5.5773 0 0z'/%3E%3C/svg%3E") 0 0 / 100% 100%;
+}
+
+.a:nth-child(n+4) {
+  transform: scaleY(-1);
+}
+
+.a:nth-child(n+7) {
+  transform: scale(-1);
+}
+
+.a:nth-child(n+10) {
+  transform: scaleX(-1);
+}
+
+.a:nth-child(2) .b, .a:nth-child(5) .b, .a:nth-child(8) .b, .a:nth-child(11) .b {
+  transform: scaleX(-1) rotate(-60deg);
+}
+
+.a:nth-child(3) .b, .a:nth-child(4) .b, .a:nth-child(9) .b, .a:nth-child(10) .b {
+  transform: rotate(60deg);
+}
+
+// shapes
+.wedges, .pills, .squares, .petals {
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    border-width: $static-border-width;
+    border-width: $dynamic-border-width;
+    border-style: double;
+  }
+}
+
+.wedges {
+  &:before {
+    bottom: 55%;
+    left: 10%;
+    width: 50%;
+    height: 70%;
+    border-color: $secondary-darker;
+    border-radius: 0 70% 0 0;
+  }
+
+  &:after {
+    top: 45%;
+    right: 50%;
+    width: 40%;
+    height: 40%;
+    border-color: $secondary-darker;
+    border-radius: 0 0 60%;
+    transform: rotate(50deg);
+    transform-origin: 0 0;
+  }
+}
+
+@keyframes pills-before {
+  50% {
+    transform: rotate(12deg);
+  }
+}
+@keyframes pills-after {
+  50% {
+    transform: rotate(-98deg);
+  }
+}
+
+.pills {
+  &:before {
+    right: 50%;
+    bottom: 50%;
+    width: 60%;
+    height: 120%;
+    border-color: $primary-medium;
+    border-radius: 50%;
+    transform: rotate(-6deg);
+    transform-origin: 100% 50%;
+    animation: pills-before 30s ease-in-out 0s infinite alternate;
+  }
+
+  &:after {
+    top: 55%;
+    right: 40%;
+    width: 80%;
+    height: 50%;
+    border-color: $primary-medium;
+    border-radius: 50%;
+    transform: rotate(-40deg);
+    animation: pills-after 30s ease-in-out 0s infinite alternate;
+  }
+}
+
+@keyframes squares-before {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes squares-after {
+  50% {
+    transform: rotate(-225deg);
+  }
+}
+
+.squares {
+  &:before {
+    top: 60%;
+    right: 55%;
+    width: 65%;
+    height: 65%;
+    border-color: $secondary-medium;
+    animation: squares-before 30s ease-in-out 0s infinite alternate;
+  }
+
+  &:after {
+    right: 55%;
+    bottom: 60%;
+    width: 65%;
+    height: 65%;
+    border-color: $secondary-medium;
+    transform: rotate(-45deg);
+    animation: squares-after 30s ease-in-out 0s infinite alternate;
+  }
+}
+
+@keyframes petals-before {
+  50% {
+    transform: rotate(50deg);
+  }
+}
+@keyframes petals-after {
+  50% {
+    transform: rotate(-52deg);
+  }
+}
+
+.petals {
+  &:before {
+    right: 50%;
+    bottom: 55%;
+    width: 52%;
+    height: 75%;
+    border-color: $primary-bright;
+    border-radius: 50% 0;
+    transform: rotate(-20deg);
+    animation: petals-before 30s ease-in-out 0s infinite alternate;
+  }
+
+  &:after {
+    top: 55%;
+    right: 52%;
+    width: 55%;
+    height: 55%;
+    border-color: $primary-bright;
+    border-radius: 50%;
+    transform-origin: 25% 100%;
+    animation: petals-after 30s ease-in-out 0s infinite alternate;
+  }
+}
