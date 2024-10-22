@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint2';
 import solidPlugin from 'vite-plugin-solid';
 import stylelintPlugin from 'vite-plugin-stylelint';
+import solidSvgPlugin from 'vite-plugin-solid-svg';
 
 import * as configs from '@brybrant/configs';
 
@@ -16,6 +17,12 @@ export default defineConfig({
       config: configs.stylelintConfig,
     }),
     solidPlugin(),
+    solidSvgPlugin({
+      svgo: {
+        enabled: true,
+        svgoConfig: configs.svgoConfig,
+      },
+    }),
     eslintPlugin({
       lintInWorker: true,
     }),
@@ -25,4 +32,4 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
   },
-})
+});
