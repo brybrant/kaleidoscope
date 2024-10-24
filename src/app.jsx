@@ -1,6 +1,6 @@
 import { render } from 'solid-js/web';
 
-import GitHub from './svg/github.svg?component-solid';
+import GitHubSVG from '../node_modules/@brybrant/svg-icons/GitHub.svg?component-solid';
 
 import './app.scss';
 import './kaleidoscope.scss';
@@ -32,7 +32,7 @@ function App() {
           class='button'
           href='https://github.com/brybrant/kaleidoscope'
           target='_blank'
-        ><GitHub/>View Source</a>
+        ><GitHubSVG/>View Source</a>
       </main>
     </>
   );
