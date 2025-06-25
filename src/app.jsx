@@ -6,42 +6,39 @@ import GitHubSVG from '../node_modules/@brybrant/svg-icons/GitHub.svg';
 import './app.scss';
 import './kaleidoscope.scss';
 
-function App() {
-  return (
-    <>
-      <div class='background__container'>
-        <div class='background'>
-          <For each={Array(12)}>
-            {() => (
-              <div class='a'>
-                <div class='b'>
-                  <div class='wedges' />
-                  <div class='pills' />
-                  <div class='squares' />
-                  <div class='petals' />
-                </div>
+const App = () => (
+  <>
+    <div class='background__container'>
+      <div class='background'>
+        <For each={Array(12)}>
+          {() => (
+            <div class='a'>
+              <div class='b'>
+                <div class='wedges' />
+                <div class='pills' />
+                <div class='squares' />
+                <div class='petals' />
               </div>
-            )}
-          </For>
-        </div>
+            </div>
+          )}
+        </For>
       </div>
-      <main>
-        <h1>
-          <For each={'KALEIDOSCOPE'}>
-            {(letter, i) => <span class={`letter-${i()}`}>{letter}</span>}
-          </For>
-        </h1>
-        <a
-          class='button'
-          href='https://github.com/brybrant/kaleidoscope'
-          target='_blank'
-        >
-          <GitHubSVG />
-          View Source
-        </a>
-      </main>
-    </>
-  );
-}
+    </div>
+    <main>
+      <h1>
+        <For each={'KALEIDOSCOPE'}>
+          {(letter, i) => <span class={`letter-${i()}`}>{letter}</span>}
+        </For>
+      </h1>
+      <a
+        class='button'
+        href='https://github.com/brybrant/kaleidoscope'
+        target='_blank'
+      >
+        <GitHubSVG />
+      </a>
+    </main>
+  </>
+);
 
 render(() => <App />, document.getElementById('app'));

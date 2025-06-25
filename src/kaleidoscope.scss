@@ -98,17 +98,6 @@ $dynamic-border-width: max(8vw, 8vh);
   }
 }
 
-@keyframes pills-before {
-  50% {
-    transform: translateZ(0) rotate(12deg);
-  }
-}
-@keyframes pills-after {
-  50% {
-    transform: translateZ(0) rotate(-98deg);
-  }
-}
-
 .pills {
   &:before {
     right: 50%;
@@ -117,11 +106,8 @@ $dynamic-border-width: max(8vw, 8vh);
     height: 120%;
     border-color: $primary-medium;
     border-radius: 50%;
-    transform: translateZ(0) rotate(-6deg);
+    transform: rotate(-6deg);
     transform-origin: 100% 50%;
-
-    // animation: pills-before 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
   }
 
   &:after {
@@ -131,21 +117,7 @@ $dynamic-border-width: max(8vw, 8vh);
     height: 50%;
     border-color: $primary-medium;
     border-radius: 50%;
-    transform: translateZ(0) rotate(-40deg);
-
-    // animation: pills-after 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
-  }
-}
-
-@keyframes squares-before {
-  50% {
-    transform: translateZ(0) rotate(180deg);
-  }
-}
-@keyframes squares-after {
-  50% {
-    transform: translateZ(0) rotate(-225deg);
+    transform: rotate(-40deg);
   }
 }
 
@@ -156,10 +128,6 @@ $dynamic-border-width: max(8vw, 8vh);
     width: 65%;
     height: 65%;
     border-color: $secondary-medium;
-    transform: translateZ(0);
-
-    // animation: squares-before 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
   }
 
   &:after {
@@ -168,21 +136,7 @@ $dynamic-border-width: max(8vw, 8vh);
     width: 65%;
     height: 65%;
     border-color: $secondary-medium;
-    transform: translateZ(0) rotate(-45deg);
-
-    // animation: squares-after 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
-  }
-}
-
-@keyframes petals-before {
-  50% {
-    transform: translateZ(0) rotate(50deg);
-  }
-}
-@keyframes petals-after {
-  50% {
-    transform: translateZ(0) rotate(-52deg);
+    transform: rotate(-45deg);
   }
 }
 
@@ -194,10 +148,7 @@ $dynamic-border-width: max(8vw, 8vh);
     height: 75%;
     border-color: $primary-bright;
     border-radius: 50% 0;
-    transform: translateZ(0) rotate(-20deg);
-
-    // animation: petals-before 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
+    transform: rotate(-20deg);
   }
 
   &:after {
@@ -207,10 +158,5 @@ $dynamic-border-width: max(8vw, 8vh);
     height: 55%;
     border-color: $primary-bright;
     border-radius: 50%;
-    transform: translateZ(0);
-    transform-origin: 25% 100%;
-
-    // animation: petals-after 30s ease-in-out 0s infinite alternate;
-    // will-change: transform;
   }
 }

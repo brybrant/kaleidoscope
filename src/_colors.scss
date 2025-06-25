@@ -1,8 +1,8 @@
 @use '../node_modules/@brybrant/sass-okhsv-okhsl' as convert;
 
-$primary-darker: convert.okhsv_to_rgba(50deg, 0.65, 0.5);
-$primary-medium: convert.okhsv_to_rgba(50deg, 0.65, 0.6);
-$primary-bright: convert.okhsv_to_rgba(50deg, 0.65, 0.7);
-$secondary-darker: convert.okhsv_to_rgba(230deg, 0.65, 0.5);
-$secondary-medium: convert.okhsv_to_rgba(230deg, 0.65, 0.6);
-$secondary-bright: convert.okhsv_to_rgba(230deg, 0.65, 0.7);
+$primary-darker: convert.color_to_hex(convert.okhsv_to_rgba(50deg, 0.65, 0.5));
+$primary-medium: convert.color_to_hex(convert.okhsv_to_rgba(50deg, 0.65, 0.6));
+$primary-bright: convert.color_to_hex(convert.okhsv_to_rgba(50deg, 0.65, 0.7));
+$secondary-darker: convert.color_to_hex(convert.okhsv_to_rgba(230deg, 0.65, 0.5));
+$secondary-medium: convert.color_to_hex(convert.okhsv_to_rgba(230deg, 0.65, 0.6));
+$secondary-bright: convert.color_to_hex(convert.okhsv_to_rgba(230deg, 0.65, 0.7));

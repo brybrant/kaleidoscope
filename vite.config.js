@@ -19,11 +19,6 @@ export default defineConfig(({ mode }) => {
     },
     css: {
       postcss: configs.postCSSConfig,
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
     },
     plugins: [
       stylelintPlugin({
@@ -34,7 +29,6 @@ export default defineConfig(({ mode }) => {
       solidSvgPlugin({
         defaultAsComponent: true,
         svgo: {
-          enabled: true,
           svgoConfig: configs.svgoConfig,
         },
       }),
