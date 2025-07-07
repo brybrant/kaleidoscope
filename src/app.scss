@@ -1,24 +1,14 @@
 @use './colors' as *;
 
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: 'DM Serif Display';
-  src:
-    url('/fonts/DMSerifDisplay-Regular.woff2') format('woff2'),
-    url('/fonts/DMSerifDisplay-Regular.woff') format('woff'),
-    url('/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
-  font-display: swap;
-}
-
 *, :before, :after {
   box-sizing: border-box;
 }
 
 html {
   overflow-x: hidden;
-  font-size: 100%;
-  font-size: clamp(100%, min(4vw, 5vh), 200%);
+  font-size: 200%;
+  font-size: clamp(100%, 4vmin, 200%);
+  font-size: clamp(100%, 4dvmin, 200%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
@@ -29,6 +19,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   font-weight: 400;
   font-family:
@@ -49,14 +40,18 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem 0;
+  min-height: 100dvh;
+  padding: 4rem 0;
   color: #fff;
 }
 
 .background__container {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .background {
@@ -64,8 +59,8 @@ main {
   top: 50%;
   left: 50%;
   overflow: hidden;
-  width: max(100vw, 100vh);
-  height: max(100vw, 100vh);
+  width: 100vmax;
+  height: 100vmax;
   transform: translate(-50%, -50%);
 }
 

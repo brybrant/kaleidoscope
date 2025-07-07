@@ -1,7 +1,8 @@
 @use './colors' as *;
 
 $static-border-width: 90px;
-$dynamic-border-width: max(8vw, 8vh);
+$dynamic-border-width1: 8vmax;
+$dynamic-border-width2: 8dvmax;
 
 .a {
   position: absolute;
@@ -71,7 +72,8 @@ $dynamic-border-width: max(8vw, 8vh);
     content: '';
     position: absolute;
     border-width: $static-border-width;
-    border-width: $dynamic-border-width;
+    border-width: $dynamic-border-width1;
+    border-width: $dynamic-border-width2;
     border-style: double;
   }
 }

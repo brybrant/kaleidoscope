@@ -3,6 +3,7 @@ import { render } from 'solid-js/web';
 
 import GitHubSVG from '../node_modules/@brybrant/svg-icons/GitHub.svg';
 
+import './font.scss';
 import './app.scss';
 import './kaleidoscope.scss';
 
@@ -41,4 +42,9 @@ const App = () => (
   </>
 );
 
-render(() => <App />, document.getElementById('app'));
+const dispose = render(() => <App />, document.getElementById('app'));
+
+if (import.meta.hot) {
+  import.meta.hot.accept();
+  import.meta.hot.dispose(dispose);
+}
